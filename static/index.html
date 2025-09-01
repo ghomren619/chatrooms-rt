@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Chat Rooms</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>💬 Chat Rooms</h1>
+            <div class="user-controls">
+                <label for="usernameInput">Username:</label>
+                <input type="text" id="usernameInput" placeholder="Enter your name" maxlength="20">
+                <button id="disconnectBtn" disabled>Disconnect</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <aside class="rooms-sidebar">
+            <h3>Rooms</h3>
+            <ul id="roomsList"></ul>
+            <div class="create-room">
+                <input type="text" id="createRoomInput" placeholder="New room name" maxlength="30">
+                <button id="createRoomBtn">Create</button>
+            </div>
+        </aside>
+
+        <section class="chat-area">
+            <div class="chat-header">
+                <h2>Room: <span id="currentRoomLabel">(not connected)</span></h2>
+            </div>
+            <div id="messages" class="messages-container"></div>
+            <form id="messageForm" class="message-form">
+                <input type="text" id="messageInput" placeholder="Type a message..." autocomplete="off" disabled>
+                <button type="submit" disabled>Send</button>
+            </form>
+        </section>
+
+        <aside class="users-sidebar">
+            <h3>Online Users</h3>
+            <ul id="usersList"></ul>
+        </aside>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.4;
+    background-color: #f5f5f5;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem;
+    border-bottom: 2px solid #34495e;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-content h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.user-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-controls label {
+    font-size: 0.9rem;
+}
+
+.user-controls input {
+    padding: 6px 12px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.user-controls button {
+    padding: 6px 12px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.user-controls button:hover:not(:disabled) {
+    background: #c0392b;
+}
+
+.user-controls button:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.rooms-sidebar, .users-sidebar {
+    width: 220px;
+    background: white;
+    border-right: 1px solid #ddd;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.users-sidebar {
+    border-right: none;
+    border-left: 1px solid #ddd;
+}
+
+.rooms-sidebar h3, .users-sidebar h3 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.rooms-sidebar ul, .users-sidebar ul {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.rooms-sidebar li, .users-sidebar li {
+    padding: 8px 12px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #ecf0f1;
+    transition: background-color 0.2s;
+}
+
+.rooms-sidebar li:hover {
+    background: #bdc3c7;
+}
+
+.rooms-sidebar li.active {
+    background: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+.users-sidebar li {
+    cursor: default;
+    background: #e8f5e8;
+}
+
+.create-room {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.create-room input {
+    padding: 8px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.create-room button {
+    padding: 8px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.create-room button:hover {
+    background: #229954;
+}
+
+.chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.chat-header {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    background: #ecf0f1;
+}
+
+.chat-header h2 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.messages-container {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background: #fafafa;
+    min-height: 400px;
+}
+
+.msg {
+    margin-bottom: 8px;
+    padding: 6px 0;
+    word-wrap: break-word;
+    font-size: 0.9rem;
+}
+
+.msg.system {
+    color: #7f8c8d;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+.message-form {
+    display: flex;
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+    background: #ecf0f1;
+    gap: 10px;
+}
+
+.message-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.message-form input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.message-form button {
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.message-form button:hover:not(:disabled) {
+    background: #2980b9;
+}
+
+.message-form button:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .rooms-sidebar, .users-sidebar {
+        width: 100%;
+        max-height: 150px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
