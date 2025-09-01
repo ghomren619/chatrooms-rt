@@ -76,3 +76,4 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000
 - **Real-time**: WebSocket connections for instant messaging
 
 Built in ~30 minutes as a fun coding project! 🚀
+"# chatrooms-rt" 
